@@ -8,10 +8,7 @@
 
 
 
-
-
 /******* COMPROBACIONES *******/
-
 
 /**
  * VERIFICAR MATRIZ
@@ -22,6 +19,7 @@
  * @see matrixResoulved.js/matrixResoulved_esMatriz(variable)
  */
 function testRex_matrixResoulved_esMatriz(){
+	console.log("Test Rex - matrixResoulved_esMatriz()");
 	
 	var correcto = true;
 	var variable;
@@ -106,6 +104,7 @@ function testRex_matrixResoulved_esMatriz(){
  * @see matrixResoulved.js/matrixResoulved_esNula(matriz)
  */
 function testRex_matrixResoulved_esNula(){
+	console.log("Test Rex - matrixResoulved_esNula()");
 	
 	var correcto = true;
 	var variable;
@@ -160,6 +159,7 @@ function testRex_matrixResoulved_esNula(){
  * @see matrixResoulved.js/matrixResoulved_esCuadrada(matriz)
  */
 function testRex_matrixResoulved_esCuadrada(){
+	console.log("Test Rex - matrixResoulved_esCuadrada()");
 	
 	var correcto = true;
 	var variable;
@@ -196,6 +196,7 @@ function testRex_matrixResoulved_esCuadrada(){
  * @see matrixResoulved.js/matrixResoulved_esDiagonal(matriz)
  */
 function testRex_matrixResoulved_esDiagonal(){
+	console.log("Test Rex - matrixResoulved_esDiagonal()");
 	
 	var correcto = true;
 	var variable;
@@ -238,6 +239,7 @@ function testRex_matrixResoulved_esDiagonal(){
  * @see matrixResoulved.js/matrixResoulved_esUnidad(matriz)
  */
 function testRex_matrixResoulved_esUnidad(){
+	console.log("Test Rex - matrixResoulved_esUnidad()");
 	
 	var correcto = true;
 	var variable;
@@ -280,6 +282,7 @@ function testRex_matrixResoulved_esUnidad(){
  * @see matrixResoulved.js/matrixResoulved_esTriangularSuperior(matriz)
  */
 function testRex_matrixResoulved_esTriangularSuperior(){
+	console.log("Test Rex - matrixResoulved_esTriangularSuperior()");
 	
 	var correcto = true;
 	var variable;
@@ -328,6 +331,7 @@ function testRex_matrixResoulved_esTriangularSuperior(){
  * @see matrixResoulved.js/matrixResoulved_esTriangularInferior(matriz)
  */
 function testRex_matrixResoulved_esTriangularInferior(){
+	console.log("Test Rex - matrixResoulved_esTriangularInferior()");
 	
 	var correcto = true;
 	var variable;
@@ -376,6 +380,7 @@ function testRex_matrixResoulved_esTriangularInferior(){
  * @see matrixResoulved.js/matrixResoulved_esTriangular(matriz)
  */
 function testRex_matrixResoulved_esTriangular(){
+	console.log("Test Rex - matrixResoulved_esTriangular()");
 	
 	var correcto = true;
 	var variable;
@@ -424,6 +429,7 @@ function testRex_matrixResoulved_esTriangular(){
  * @see matrixResoulved.js/matrixResoulved_sonEquidimensionales(matriz)
  */
 function testRex_matrixResoulved_sonEquidimensionales(){
+	console.log("Test Rex - matrixResoulved_sonEquidimensionales()");
 	
 	var correcto = true;
 	var variable1, variable2;
@@ -477,6 +483,7 @@ function testRex_matrixResoulved_sonEquidimensionales(){
  * @see matrixResoulved.js/matrixResoulved_sonMultiplicables(matriz)
  */
 function testRex_matrixResoulved_sonMultiplicables(){
+	console.log("Test Rex - matrixResoulved_sonMultiplicables()");
 	
 	var correcto = true;
 	var variable1, variable2;
@@ -509,8 +516,8 @@ function testRex_matrixResoulved_sonMultiplicables(){
 		console.log("Falla test 4");
 	}
 
-	variable1 = [[0,2],[9,2],[4,1]];
-	variable2 = [[0,4],[6,1]];
+	variable1 = [[0,4],[6,1]];
+	variable2 = [[0,2],[9,2],[4,1]];
 	if(matrixResoulved_sonMultiplicables(variable1, variable2)){
 		correcto = false;
 		console.log("Falla test 5");
@@ -550,6 +557,7 @@ function testRex_matrixResoulved_sonMultiplicables(){
  * @see matrixResoulved.js/matrixResoulved_compararMatrices(matriz)
  */
 function testRex_matrixResoulved_compararMatrices(){
+	console.log("Test Rex - matrixResoulved_compararMatrices()");
 	
 	var correcto = true;
 	var variable1, variable2, resultado;
@@ -608,6 +616,7 @@ function testRex_matrixResoulved_compararMatrices(){
  * @see matrixResoulved.js/matrixResoulved_sumarMatrices(matriz)
  */
 function testRex_matrixResoulved_sumarMatrices(){
+	console.log("Test Rex - matrixResoulved_sumarMatrices()");
 	
 	var correcto = true;
 	var variable1, variable2, resultado;
@@ -672,6 +681,7 @@ function testRex_matrixResoulved_sumarMatrices(){
  * @see matrixResoulved.js/matrixResoulved_matrizPorNumero(matriz, numero)
  */
 function testRex_matrixResoulved_matrizPorNumero(){
+	console.log("Test Rex - matrixResoulved_matrizPorNumero()");
 	
 	var correcto = true;
 	var variable1, variable2, resultado;
@@ -736,6 +746,7 @@ function testRex_matrixResoulved_matrizPorNumero(){
  * @see matrixResoulved.js/matrixResoulved_matrizPorMatriz(matriz, matriz)
  */
 function testRex_matrixResoulved_matrizPorMatriz(){
+	console.log("Test Rex - matrixResoulved_matrizPorMatriz()");
 	
 	var correcto = true;
 	var variable1, variable2, resultado;
@@ -761,8 +772,8 @@ function testRex_matrixResoulved_matrizPorMatriz(){
 		console.log("Falla test 3");
 	}
 
-	variable1 = [[1],[2],[3]];
-	variable2 = [[0,2]];
+	variable1 = [[0,2]];
+	variable2 = [[1],[2],[3]];
 	if(matrixResoulved_matrizPorMatriz(variable1, variable2) != null){
 		correcto = false;
 		console.log("Falla test 4");
@@ -808,6 +819,7 @@ function testRex_matrixResoulved_matrizPorMatriz(){
  * @see matrixResoulved.js/matrixResoulved_adjuntoMatriz(matriz, iAdjunto, jAdjunto)
  */
 function testRex_matrixResoulved_adjuntoMatriz(){
+	console.log("Test Rex - matrixResoulved_adjuntoMatriz()");
 	
 	var correcto = true;
 	var variable1, variable2, variable3, resultado;
@@ -886,6 +898,7 @@ function testRex_matrixResoulved_adjuntoMatriz(){
  * @see matrixResoulved.js/matrixResoulved_vectorUnidimensionalMatriz(matriz)
  */
 function testRex_matrixResoulved_vectorUnidimensionalMatriz(){
+	console.log("Test Rex - matrixResoulved_vectorUnidimensionalMatriz()");
 	
 	var correcto = true;
 	var variable1, resultado;
@@ -903,7 +916,13 @@ function testRex_matrixResoulved_vectorUnidimensionalMatriz(){
 	}
 
 	variable = [[0],[2],[1]];
-	if(matrixResoulved_vectorUnidimensionalMatriz(variable) != null){
+	resultado = [[0],[2],[1]];
+	if(
+		!matrixResoulved_compararMatrices(
+			matrixResoulved_vectorUnidimensionalMatriz(variable)
+			, resultado
+		)
+	){
 		correcto = false;
 		console.log("Falla test 3");
 	}
@@ -969,6 +988,7 @@ function testRex_matrixResoulved_vectorUnidimensionalMatriz(){
  * @see matrixResoulved.js/matrixResoulved_determinanteMatriz(matriz)
  */
 function testRex_matrixResoulved_determinanteMatriz(){
+	console.log("Test Rex - matrixResoulved_determinanteMatriz()");
 	
 	var correcto = true;
 	var variable1, resultado;
@@ -1023,6 +1043,239 @@ function testRex_matrixResoulved_determinanteMatriz(){
 		console.log("Falla test 7");
 		console.log("Deseado - "+JSON.stringify(resultado));
 		console.log("Obtenido - "+JSON.stringify(matrixResoulved_determinanteMatriz(variable)));
+	}
+
+	return correcto;
+};
+
+
+/**
+ * TRASPONER MATRIZ
+ * Test unitario para matrixResoulved_trasponerMatriz(matriz).
+ * Unitary test for matrixResoulved_trasponerMatriz(matriz).
+ * 
+ * @return boolean
+ * @see matrixResoulved.js/matrixResoulved_trasponerMatriz(matriz)
+ */
+function testRex_matrixResoulved_trasponerMatriz(){
+	console.log("Test Rex - matrixResoulved_trasponerMatriz()");
+	
+	var correcto = true;
+	var variable, resultado;
+
+	variable = [[0,3,2],["hola",1,1]];
+	if(matrixResoulved_trasponerMatriz(variable) != null){
+		correcto = false;
+		console.log("Falla test 1");
+	}
+
+	variable = [[0],[2,3],[1,4]];
+	if(matrixResoulved_trasponerMatriz(variable) != null){
+		correcto = false;
+		console.log("Falla test 2");
+	}
+
+	variable = [[0],[2],[1]];
+	resultado = [[0,2,1]];
+	if(
+		!matrixResoulved_compararMatrices(
+			matrixResoulved_trasponerMatriz(variable)
+			, resultado
+		)
+	){
+		correcto = false;
+		console.log("Falla test 3");
+	}
+
+	variable = [[3,0,0],[0,3,0],[0,0,3]];
+	resultado = [[3,0,0],[0,3,0],[0,0,3]];
+	if(
+		!matrixResoulved_compararMatrices(
+			matrixResoulved_trasponerMatriz(variable)
+			, resultado
+		)
+	){
+		correcto = false;
+		console.log("Falla test 4");
+	}
+
+	variable = [[1,2,2,2],[3,1,2,2],[3,3,1,2],[3,3,3,1]];
+	resultado = [[1,3,3,3],[2,1,3,3],[2,2,1,3],[2,2,2,1]];
+	if(
+		!matrixResoulved_compararMatrices(
+			matrixResoulved_trasponerMatriz(variable)
+			, resultado
+		)
+	){
+		correcto = false;
+		console.log("Falla test 5");
+	}
+
+	variable = [[1,0,0,0],[1,1,0,0],[1,1,1,0],[1,1,1,1]];
+	resultado = [[1,1,1,1],[0,1,1,1],[0,0,1,1],[0,0,0,1]];
+	if(
+		!matrixResoulved_compararMatrices(
+			matrixResoulved_trasponerMatriz(variable)
+			, resultado
+		)
+	){
+		correcto = false;
+		console.log("Falla test 6");
+	}
+
+	return correcto;
+};
+
+
+/**
+ * MATRIZ UNIDAD
+ * Test unitario para matrixResoulved_matrizUnidad(dimension).
+ * Unitary test for matrixResoulved_matrizUnidad(dimension).
+ * 
+ * @return boolean
+ * @see matrixResoulved.js/matrixResoulved_matrizUnidad(dimension)
+ */
+function testRex_matrixResoulved_matrizUnidad(){
+	console.log("Test Rex - matrixResoulved_matrizUnidad()");
+	
+	var correcto = true;
+	var variable, resultado;
+
+	variable = "a";
+	if(matrixResoulved_matrizUnidad(variable) != null){
+		correcto = false;
+		console.log("Falla test 1");
+	}
+
+	variable = 2;
+	resultado = [[1,0],[0,1]];
+	if(
+		!matrixResoulved_compararMatrices(
+			matrixResoulved_matrizUnidad(variable)
+			, resultado
+		)
+	){
+		correcto = false;
+		console.log("Falla test 2");
+	}
+
+	variable = 5;
+	resultado = [[1,0,0,0,0],[0,1,0,0,0],[0,0,1,0,0],[0,0,0,1,0],[0,0,0,0,1]];
+	if(
+		!matrixResoulved_compararMatrices(
+			matrixResoulved_matrizUnidad(variable)
+			, resultado
+		)
+	){
+		correcto = false;
+		console.log("Falla test 3");
+	}
+
+	return correcto;
+};
+
+
+/**
+ * MATRIZ DE ADJUNTOS
+ * Test unitario para matrixResoulved_matrizAdjuntos(matriz).
+ * Unitary test for matrixResoulved_matrizAdjuntos(matriz).
+ * 
+ * @return boolean
+ * @see matrixResoulved.js/matrixResoulved_matrizAdjuntos(dimension)
+ */
+function testRex_matrixResoulved_matrizAdjuntos(){
+	console.log("Test Rex - matrixResoulved_matrizAdjuntos()");
+	
+	var correcto = true;
+	var matriz, resultado;
+
+	matriz = "as";
+	if(matrixResoulved_matrizAdjuntos(matriz) != null){
+		correcto = false;
+		console.log("Falla test 1");
+		console.log("Obtenido - "+JSON.stringify(matrixResoulved_matrizAdjuntos(matriz)));
+	}
+
+	matriz = [[4, 2, 0], [1, 1, 1], [3, 4, 2]];
+	resultado = [[-2, 1, 1], [-4, 8, -10], [2, -4, 2]];
+	if(
+		!matrixResoulved_compararMatrices(
+			matrixResoulved_matrizAdjuntos(matriz)
+			, resultado
+		)
+	){
+		correcto = false;
+		console.log("Falla test 2");
+		console.log("Deseado - "+JSON.stringify(resultado));
+		console.log("Obtenido - "+JSON.stringify(matrixResoulved_matrizAdjuntos(matriz)));
+	}
+
+	matriz = [[1,0,0,0,0],[0,1,0,0,0],[0,0,1,0,0],[0,0,0,1,0],[0,0,0,0,1]];
+	resultado = [[1,0,0,0,0],[0,1,0,0,0],[0,0,1,0,0],[0,0,0,1,0],[0,0,0,0,1]];
+	if(
+		!matrixResoulved_compararMatrices(
+			matrixResoulved_matrizAdjuntos(matriz)
+			, resultado
+		)
+	){
+		correcto = false;
+		console.log("Falla test 3");
+		console.log("Deseado - "+JSON.stringify(resultado));
+		console.log("Obtenido - "+JSON.stringify(matrixResoulved_matrizAdjuntos(matriz)));
+	}
+
+	return correcto;
+};
+
+
+/**
+ * MATRIZ INVERSA
+ * Test unitario para matrixResoulved_matrizInversa(dimension).
+ * Unitary test for matrixResoulved_matrizInversa(dimension).
+ * 
+ * @return boolean
+ * @see matrixResoulved.js/matrixResoulved_matrizInversa(dimension)
+ */
+function testRex_matrixResoulved_matrizInversa(){
+	console.log("Test Rex - matrixResoulved_matrizInversa()");
+	
+	var correcto = true;
+	var matriz, resultado;
+
+	matriz = "as";
+	if(matrixResoulved_matrizInversa(matriz) != null){
+		correcto = false;
+		console.log("Falla test 1");
+	}
+	
+	matriz = [[4, 1, 3], [2, 1, 4], [0, 1, 2]];
+	resultado = [[(1/3), (-1/6), (-1/6)], [(2/3), (-4/3), (5/3)], [(-1/3), (2/3), (-1/3)]];
+	if(
+		!matrixResoulved_compararMatrices(
+			matrixResoulved_matrizInversa(matriz)
+			, resultado
+		)
+	){
+		correcto = false;
+		console.log("Falla test 2");
+		console.log("IMPORTANTE, Este fallo se dá por una diferencia de 0.0000000000000002 unidades en un único campo.");
+		console.log("Deseado - "+JSON.stringify(resultado));
+		console.log("Obtenido - "+JSON.stringify(matrixResoulved_matrizInversa(matriz)));
+		document.write("<br/>IMPORTANTE, Este fallo se dá por una diferencia de 0.0000000000000002 unidades en un único campo.<br/>");
+	}
+
+	matriz = [[1,0,0,0,0],[0,1,0,0,0],[0,0,1,0,0],[0,0,0,1,0],[0,0,0,0,1]];
+	resultado = [[1,0,0,0,0],[0,1,0,0,0],[0,0,1,0,0],[0,0,0,1,0],[0,0,0,0,1]];
+	if(
+		!matrixResoulved_compararMatrices(
+			matrixResoulved_matrizInversa(matriz)
+			, resultado
+		)
+	){
+		correcto = false;
+		console.log("Falla test 3");
+		console.log("Deseado - "+JSON.stringify(resultado));
+		console.log("Obtenido - "+JSON.stringify(matrixResoulved_matrizInversa(matriz)));
 	}
 
 	return correcto;

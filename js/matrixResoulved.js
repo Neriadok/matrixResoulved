@@ -24,61 +24,70 @@ function matrixResoulved_esMatriz(variable){
 	 * Verificamos que la variable tiene longitud.
 	 * 
 	 */
-	if(variable.length != null){
-		/**
-		 * Verificamos que, además, la primera coordenada también tenga longitud.
-		 * We verify if also variable's first coordenate has length. 
-		 */
-		if(variable[0].length != null){
-			var esMatriz = true;
-			
-			var longitudPrimeraFila = variable[0].length;
-			
+	if(variable != null){
+		if(variable.length != null){
 			/**
-			 * Recorremos cada fila tras la primera mientras la variable sea una matriz.
-			 * We go over each row after first one while variable is a matrix.
+			 * Verificamos que, además, la primera coordenada también tenga longitud.
+			 * We verify if also variable's first coordenate has length. 
 			 */
-			for(var i = 1; i < variable.length && esMatriz; i++){
-				/**
-				 * Verificamos que la coordenada también tenga longitud.
-				 * We verify coordenate has length. 
-				 */
-				if(variable[i].length == null){
-					esMatriz = false;
-				}
+			if(variable[0].length != null){
+				var esMatriz = true;
+				
+				var longitudPrimeraFila = variable[0].length;
 				
 				/**
-				 * Verificamos que tenga la misma longitud que la primera coordenada.
-				 * We verify coordenate has same length as the first.
+				 * Recorremos cada fila tras la primera mientras la variable sea una matriz.
+				 * We go over each row after first one while variable is a matrix.
 				 */
-				else if(variable[i].length != longitudPrimeraFila){
-					esMatriz = false;
-				}
-				
-				/**
-				 * Verificamos que el contenido de las coordenadas sea un número.
-				 * We verify all row's coordenates are numbers.
-				 */
-				else{
-					for(var j = 0; j < variable[i].length && esMatriz; j++){
-						/**
-						 * La convertimos en número por si no lo fuese ya.
-						 * We parse it into a number if it's not.
-						 */
-						variable[i][j] = parseFloat(variable[i][j]);
-						if(isNaN(variable[i][j])){
-							esMatriz = false;
+				for(var i = 1; i < variable.length && esMatriz; i++){
+					/**
+					 * Verificamos que la coordenada también tenga longitud.
+					 * We verify coordenate has length. 
+					 */
+					if(variable[i].length == null){
+						esMatriz = false;
+					}
+					
+					/**
+					 * Verificamos que tenga la misma longitud que la primera coordenada.
+					 * We verify coordenate has same length as the first.
+					 */
+					else if(variable[i].length != longitudPrimeraFila){
+						esMatriz = false;
+					}
+					
+					/**
+					 * Verificamos que el contenido de las coordenadas sea un número.
+					 * We verify all row's coordenates are numbers.
+					 */
+					else{
+						for(var j = 0; j < variable[i].length && esMatriz; j++){
+							/**
+							 * La convertimos en número por si no lo fuese ya.
+							 * We parse it into a number if it's not.
+							 */
+							variable[i][j] = parseFloat(variable[i][j]);
+							if(isNaN(variable[i][j])){
+								esMatriz = false;
+							}
 						}
 					}
 				}
+				
+				return esMatriz;
 			}
 			
-			return esMatriz;
+			/**
+			 * Si la primera coordenada de la variable no tuviese longitud, la variable no puede ser una matriz.
+			 * If variable's first coordenate has no length, variable can't be a matrix.
+			 */
+			else{
+				return false;
+			}
 		}
-		
 		/**
-		 * Si la primera coordenada de la variable no tuviese longitud, la variable no puede ser una matriz.
-		 * If variable's first coordenate has no length, variable can't be a matrix.
+		 * Si la variable es nula retornamos false.
+		 * If the variable is null we return false.
 		 */
 		else{
 			return false;
@@ -572,7 +581,7 @@ function matrixResoulved_sonMultiplicables(matriz1, matriz2){
 		 * Comparamos columnas de la primera con filas de la segunda.
 		 * We compare first matrix's columns with second matrix's rows.
 		 */
-		if(matriz1.length != matriz2[0].length){
+		if(matriz1[0].length != matriz2.length){
 			sonMultiplicables = false;
 		}
 	}
@@ -686,7 +695,7 @@ function matrixResoulved_sumarMatrices(matriz1, matriz2){
 			 * Generamos las filas.
 			 * We generate the rows.
 			 */
-			var resultado = [];
+			var resultado = new Array();
 			
 			/**
 			 * Recorremos cada fila.
@@ -697,7 +706,7 @@ function matrixResoulved_sumarMatrices(matriz1, matriz2){
 				 * Generamos las columnas.
 				 * We generate the columns.
 				 */
-				resultado[i] = [];
+				resultado[i] = new Array();
 				
 				/**
 				 * Recorremos cada columna.
@@ -814,7 +823,7 @@ function matrixResoulved_matrizPorMatriz(matriz1, matriz2){
 			 * Generamos las filas.
 			 * We generate the rows.
 			 */
-			var resultado = [];
+			var resultado = new Array();
 			
 			/**
 			 * Recorremos cada fila primera matriz.
@@ -825,7 +834,7 @@ function matrixResoulved_matrizPorMatriz(matriz1, matriz2){
 				 * Generamos las columnas.
 				 * We generate the columns.
 				 */
-				resultado[i] = [];
+				resultado[i] = new Array();
 				
 				/**
 				 * Recorremos cada columna de la segunda matriz.
@@ -906,7 +915,7 @@ function matrixResoulved_adjuntoMatriz(matriz, iAdjunto, jAdjunto){
 			 * Generamos las filas.
 			 * We generate the rows.
 			 */
-			var resultado = [];
+			var resultado = new Array();
 			
 			/**
 			 * Recorremos cada fila de la matriz y vamos generando las del adjunto.
@@ -922,7 +931,7 @@ function matrixResoulved_adjuntoMatriz(matriz, iAdjunto, jAdjunto){
 					 * Generamos las columnas.
 					 * We generate the columns.
 					 */
-					resultado[filaAdjunto] = [];
+					resultado[filaAdjunto] = new Array();
 					
 					/**
 					 * Recorremos cada columna de la segunda matriz.
@@ -1014,9 +1023,9 @@ function matrixResoulved_vectorUnidimensionalMatriz(matriz){
 				 * Generamos la matriz.
 				 * We generate the matrix.
 				 */
-				var resultado = [];
+				var resultado = new Array();
 				for(var i = 0; i < matriz.length; i++){
-					resultado[i] = [];
+					resultado[i] = new Array();
 					for(var j=0; j < matriz[0].length; j++){
 						resultado[i][j] = 0;
 					}
@@ -1060,11 +1069,11 @@ function matrixResoulved_vectorUnidimensionalMatriz(matriz){
 			}
 
 			/**
-			 * Si el primer vector es completamente nulo, retornamos null.
-			 * If first vector is completly 0, we return null.
+			 * Si el primer vector es completamente nulo, retornamos la matriz original.
+			 * If first vector is completly 0, we return the original matrix.
 			 */
 			else{
-				return null
+				return matriz;
 			}
 		}
 		
@@ -1125,7 +1134,8 @@ function matrixResoulved_determinanteMatriz(matriz){
 				 * Establecemos un vector unidimensional en la matriz.
 				 * We declare an unidimensional vector in the matrix.
 				 */
-				matriz = matrixResoulved_vectorUnidimensionalMatriz(matriz);
+				matriz = new matrixResoulved_vectorUnidimensionalMatriz(matriz);
+				var dimensionesNulas = 0;
 				
 				/**
 				 * Identificamos la maginitud del vector.
@@ -1133,23 +1143,271 @@ function matrixResoulved_determinanteMatriz(matriz){
 				 */
 				var magnitudVectorial = 0;
 				var adjunto;
-				
 				for(var j = 0; j < matriz[0].length && magnitudVectorial == 0; j++){
 					if(matriz[0][j] != 0){
 						magnitudVectorial = matriz[0][j];
-						adjunto = matrixResoulved_adjuntoMatriz(matriz,0,j);
+						adjunto = new matrixResoulved_adjuntoMatriz(matriz,0,j);
+					}
+					else{
+						dimensionesNulas++;
 					}
 				}
+
 				
-				/**
-				 * Retornamos el determinante del adjunto multiplicado por la maginitud vectorial
-				 */
-				resultado = parseFloat(matrixResoulved_determinanteMatriz(adjunto) * magnitudVectorial);
+				if(dimensionesNulas == matriz[0].length){
+					resultado = 0;
+				}
+				else{
+					/**
+					 * Retornamos el determinante del adjunto multiplicado por la maginitud vectorial
+					 */
+					resultado = parseFloat(matrixResoulved_determinanteMatriz(adjunto) * magnitudVectorial);
+				}
 			}
 			/**
 			 * Retornamos el resultado.
 			 * We return the result.
 			 */
+			return resultado;
+		}
+		
+		/**
+		 * Si no existiera el adjunto.
+		 * If adjunted doesn't exist.
+		 */
+		else{
+			return null;
+		}
+	}
+	
+	/**
+	 * Si alguna no fuera una matriz, retornamos null.
+	 * If one's not a matrix, we return null.
+	 */
+	else{
+		return null;
+	}
+};
+
+
+/**
+ * TRASPONER MATRIZ
+ * Función que intercambia filas y columnas de una matriz.
+ * Function which change rows by columns in a matrix.
+ * 
+ * @param matriz float Array Array
+ * @return matrix
+ */
+function matrixResoulved_trasponerMatriz(matriz){
+	
+	/**
+	 * Veríficamos que se trata de una matriz.
+	 * We verify if it's a matrix.
+	 */
+	if(matrixResoulved_esMatriz(matriz)){
+		/**
+		 * Generamos la matriz.
+		 * We generate the matrix.
+		 */
+		var resultado = new Array();
+		
+		/**
+		 * Recorremos cada columna de la matriz y vamos generando sus conversiones.
+		 * We go over each row.
+		 */
+		for(var j = 0; j < matriz[0].length; j++){
+			resultado[j] = new Array();
+			
+			/**
+			 * Recorremos cada fila matriz.
+			 * We go over each column.
+			 */
+			for(var i = 0; i < matriz.length; i++){
+				/**
+				 * Establecemos las coordenadas invertidas.
+				 * We set inverted coordenates.
+				 */
+				resultado[j][i] = matriz[i][j];
+			}
+		}
+		
+		/**
+		 * Retornamos el resultado.
+		 * We return the result.
+		 */
+		return resultado;
+	}
+	
+	/**
+	 * Si alguna no fuera una matriz, retornamos null.
+	 * If one's not a matrix, we return null.
+	 */
+	else{
+		return null;
+	}
+};
+
+
+/**
+ * MATRIZ UNIDAD
+ * Función retorna una matriz unidad de una dimension dada.
+ * Function which returns a unity matrix with the given dimension.
+ * 
+ * @param dimension integer
+ * @return matrix
+ */
+function matrixResoulved_matrizUnidad(dimension){
+	/**
+	 * Veríficamos que la dimension sea, o se pueda convertir a entero.
+	 * We verify if the dimension is an integer or if we can convert ir into it.
+	 */
+	dimension = parseInt(dimension);
+	
+	if(!isNaN(dimension)){
+		/**
+		 * Generamos la matriz.
+		 * We generate the matrix.
+		 */
+		resultado = new Array();
+		
+		/**
+		 * Recorremos cada fila.
+		 * We go over each row.
+		 */
+		for(var i = 0; i < dimension; i++){
+			/**
+			 * Generamos las filas.
+			 * We generate the rows.
+			 */
+			resultado[i] = new Array();
+			
+			/**
+			 * Recorremos cada columna.
+			 * We go over each column.
+			 */
+			for(var j = 0; j < dimension; j++){
+				/**
+				 * Si la fila es igual a la columna, el valor de la coordenada es 1.
+				 * If coordenate's row equals coordenate's column, it's value is 1.
+				 */
+				if(i == j){
+					resultado[i][j] = 1;
+				}
+				
+				/**
+				 * En caso contrario, el valor de la coordenada es 0.
+				 * Otherwise, coordenate's value is 0.
+				 */
+				else{
+					resultado[i][j] = 0;
+				}
+			}
+		}
+		
+		/**
+		 * Retornamos el resultado.
+		 * We return the result.
+		 */
+		return resultado;
+	}
+	
+	/**
+	 * Si alguna no fuera una matriz, retornamos null.
+	 * If one's not a matrix, we return null.
+	 */
+	else{
+		return null;
+	}
+};
+
+
+/**
+ * MATRIZ DE ADJUNTOS
+ * Función que devuelve la matriz de adjuntos.
+ * Function which returns de adjunteds matrix.
+ * 
+ * @param matriz float Array Array
+ * @return matrix
+ */
+function matrixResoulved_matrizAdjuntos(matriz){
+	
+	/**
+	 * Veríficamos que se trata de una matriz.
+	 * We verify if it's a matrix.
+	 */
+	if(matrixResoulved_esMatriz(matriz)){
+		/**
+		 * Generamos la matriz.
+		 * We generate the matrix.
+		 */
+		var resultado = new Array();
+		
+		/**
+		 * Recorremos cada columna de la matriz y vamos generando sus conversiones.
+		 * We go over each row.
+		 */
+		for(var i = 0; i < matriz[0].length; i++){
+			resultado[i] = new Array();
+			
+			/**
+			 * Recorremos cada fila matriz.
+			 * We go over each column.
+			 */
+			for(var j = 0; j < matriz.length; j++){
+				/**
+				 * Establecemos las coordenadas invertidas.
+				 * We set inverted coordenates.
+				 */
+				var adjunto = matrixResoulved_adjuntoMatriz(matriz, i, j);
+				if((i+j) % 2 != 0){
+					resultado[i][j] = -matrixResoulved_determinanteMatriz(adjunto);
+				}
+				else{
+					resultado[i][j] = matrixResoulved_determinanteMatriz(adjunto);
+				}
+			}
+		}
+		
+		/**
+		 * Retornamos el resultado.
+		 * We return the result.
+		 */
+		return resultado;
+	}
+	
+	/**
+	 * Si alguna no fuera una matriz, retornamos null.
+	 * If one's not a matrix, we return null.
+	 */
+	else{
+		return null;
+	}
+};
+
+
+/**
+ * INVERSA DE UNA MATRIZ
+ * Función que retorna la inversa de una matriz.
+ * Function which returns the inverted matrix.
+ * 
+ * @param matriz float Array Array
+ * @return integer
+ */
+function matrixResoulved_matrizInversa(matriz){
+	/**
+	 * Veríficamos que se trata de una matriz.
+	 * We verify if it's a matrix.
+	 */
+	if(matrixResoulved_esMatriz(matriz)){
+		/**
+		 * Verificamos que existe dicho adjunto.
+		 * We verify that adjunted exists.
+		 */
+		if(matrixResoulved_esCuadrada(matriz)){
+			var matrizAdjuntos = matrixResoulved_matrizAdjuntos(matriz);
+			var matrizAdjuntosTraspuesta = matrixResoulved_trasponerMatriz(matrizAdjuntos);
+			var determinante = matrixResoulved_determinanteMatriz(matriz);
+			var resultado = matrixResoulved_matrizPorNumero(matrizAdjuntosTraspuesta, 1/determinante);
 			return resultado;
 		}
 		
